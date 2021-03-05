@@ -7,12 +7,12 @@
         console.log("Connected");
         socket.emit("get_data");
     });
-
-
-
-    socket.on('usage_details', function (data) {
-        console.log(data);
-    })
+    socket.on('send_data', function (response) {
+        console.log("In usage_details");
+        setData([...data, response]);
+        console.log(data.length);
+        setTimeout(socket.emit("get_data"), 100);
+    });
 
 
 </script>

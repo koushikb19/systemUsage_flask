@@ -15,13 +15,13 @@ def get_all_data():
 
 
 def get_cpu_usage():
-    return {"cpu": 100 - psutil.cpu_percent(interval=1)}
+    return {"cpu": psutil.cpu_percent(interval=1)}
 
 # returns GPU usage
 
 
 def get_mem_usage():
-    return {"mem": 100 - psutil.virtual_memory().percent}
+    return {"mem": psutil.virtual_memory().percent}
 
 # Checks if system has a GPU
 
